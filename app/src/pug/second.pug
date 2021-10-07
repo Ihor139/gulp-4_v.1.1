@@ -1,0 +1,11 @@
+extends ./templates/_layout
+
+block vars
+  - var pageTitle = "test page";
+  - var pageClass = "testpage";
+  - var pageActive = "testpage";
+
+block content
+  div.main-wrap
+    include ./components/_section-two
+    include ./components/_section-one
