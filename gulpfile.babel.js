@@ -28,7 +28,7 @@ const env = gutil.env.type
 
 const paths = {
   styles: {
-    src: ['app/src/scss/**/!(_)*.scss'],
+    src: ['app/src/scss/**/!(_)*.scss', 'app/src/scss/**/*.scss'],
     dest: ['app/dev/css/', 'app/dist/css/']
   },
   scripts: {
@@ -81,7 +81,7 @@ export function browsersync() {
 export const clean = () => env === 'production' ? del(['app/dist']) : del(['app/dev'])
 
 export function scss() {
-  return gulp.src(paths.styles.src)
+  return gulp.src(paths.styles.src[0])
     .pipe(env === 'production' ? gutil.noop() : sourcemaps.init())
     .pipe(sass({ outputStyle: 'nested' }).on('error', sass.logError))
     .pipe(env === 'production' ? autoprefixer({ overrideBrowserslist: ['last 2 versions'], cascade: true }) : gutil.noop())
@@ -150,7 +150,7 @@ export function imageOptimizer() {
     .pipe(cache(imagemin([
       gifsicle({ interlaced: true }),
       mozjpeg({ quality: 75, progressive: true }),
-      optipng({ optimizationLevel: 5 }),
+      // optipng({ optimizationLevel: 1 }), // optipng stopping of gulp assembly when somechanging in img folder 
       svgo({
         plugins: [
           {
@@ -186,7 +186,7 @@ export function iconsCopier() {
 
 export function watchFiles() {
   gulp.watch(paths.scripts.src, scripts)
-  gulp.watch(paths.styles.src, scss)
+  gulp.watch(paths.styles.src[1], scss)
   gulp.watch(paths.pages.src[1], pugToHtml)
   gulp.watch(paths.images.src, imageOptimizer)
   gulp.watch(paths.fonts.src, ttfToWoof2)
