@@ -1,2 +1,9 @@
-section.one
-  h2 Section ONE
+.container
+  section.one
+    include ../../../assets/icons/gulp.svg
+    //.image-wrapper
+      picture
+        source(srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+          data-srcset="./img/photo.webp" type="image/webp")
+        img(src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+          data-src="./img/photo.jpg" alt="img").lazyload

@@ -1,21 +1,21 @@
 //include _mixins
 
 block vars
-  - var cacheFix = parseInt(Math.random()*1000)
 
 doctype html
 html(lang="uk")
   head
     meta(charset="utf-8")
-    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
     meta(name="viewport" content="initial-scale=1.0, width=device-width")
     title Gulp 4 Template
-    meta(name="description", content='description content')
+    meta(name="description" content='description content')
 
     //favicon
     link(rel="icon" href="./img/favicon/favicon.ico" type="image/x-icon")
 
-    link(rel='stylesheet', href='./css/bundle.min.css')
+    link(rel='stylesheet' href='./libs/css/libs-styles.min.css?' + parseInt(Math.random()*1000))
+    link(rel='stylesheet' href='./css/style.min.css?' + parseInt(Math.random()*1000))
 
   body(class="page " + pageClass)
     .page__wrapper
@@ -28,4 +28,5 @@ html(lang="uk")
 
 
     block scripts
-      script(src='./js/bundle.min.js')
+      script(src='./libs/js/libs-bundle.min.js?' + parseInt(Math.random()*1000))
+      script(src='./js/index.min.js?' + parseInt(Math.random()*1000))
