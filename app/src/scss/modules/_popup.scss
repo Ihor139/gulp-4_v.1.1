@@ -1,0 +1,69 @@
+@import "./_help";
+
+.popup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: 0.3s all;
+  z-index: -1;
+  visibility: hidden;
+  opacity: 0;
+  overflow-y: auto;
+
+  &.open {
+    z-index: 350;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__body {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 768px;
+  }
+
+  &__inner {
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  &__content {
+  }
+
+  &__close {
+    position: absolute;
+    left: calc(100% + 5px);
+    top: 8px;
+    cursor: pointer;
+    @include flexCenter;
+    width: 40px;
+    height: 40px;
+    transition: 0.3s all;
+    z-index: 3;
+    @include for-1300 {
+      top: auto;
+      left: auto;
+      bottom: 100%;
+      right: 0;
+    }
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__close-ico {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background: url("../../img/ico/close-white.svg") center no-repeat;
+  }
+}

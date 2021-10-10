@@ -1,5 +1,29 @@
-@import './libs/reset.scss';
-@import './templates/header.scss';
-@import './templates/footer.scss';
-@import './components/section-one.scss';
-@import './components/section-two.scss';
+@import "_import";
+
+html,
+body {
+  height: 100%;
+}
+
+.page__wrapper {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background-image: url(../img/main-bg.jpg);
+  padding: 20px 0;
+}
+
+.page__content {
+  flex: 1 1 auto;
+  border-radius: 12px;
+}
+
+.container {
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 0 20px;
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0px 0px 30px 6px rgba(0, 0, 0, 0.19);
+}

@@ -1,5 +1,34 @@
-header{
-  width: 100%;
-  min-height: 50px;
-  background-color: rgb(25, 7, 88);
+.header {
+  &__inner {
+  }
+  &__content {
+  }
+  &__logo {
+  }
+  &__nav {
+  }
+}
+.logo {
+  &__wrapper {
+  }
+  &__top {
+  }
+  &__bottom {
+  }
+  &--white {
+  }
+  &--dark-bg {
+  }
+}
+.nav {
+  &__wrapper {
+  }
+  &__list {
+  }
+  &__item {
+    &.active {
+    }
+  }
+  &__link {
+  }
 }
